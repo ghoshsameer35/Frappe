@@ -1,0 +1,12 @@
+mysqldump --single-transaction --quick --lock-tables=false -u _fff5a7e212e948c4 -pGsytHZbvcQXb2N7z _fff5a7e212e948c4 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./Banking/private/backups/20210917_000002-Banking-database.sql.gz
+
+Backup Summary for Banking at 2021-09-17 00:00:08.818391
+Config  : ./Banking/private/backups/20210917_000002-Banking-site_config_backup.json 116.0B
+Database: ./Banking/private/backups/20210917_000002-Banking-database.sql.gz         1.2MiB
+Backup for Site Banking has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _fff5a7e212e948c4 -pGsytHZbvcQXb2N7z _fff5a7e212e948c4 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./Banking/private/backups/20210917_120002-Banking-database.sql.gz
+
+Backup Summary for Banking at 2021-09-17 12:00:05.609092
+Config  : ./Banking/private/backups/20210917_120002-Banking-site_config_backup.json 116.0B
+Database: ./Banking/private/backups/20210917_120002-Banking-database.sql.gz         1.2MiB
+Backup for Site Banking has been successfully completed

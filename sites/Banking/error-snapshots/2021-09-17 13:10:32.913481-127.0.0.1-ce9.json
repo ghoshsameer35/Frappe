@@ -1,0 +1,642 @@
+{
+ "etype": "DataError",
+ "evalue": "DataError(1265, \"Data truncated for column 'amount' at row 1\")",
+ "exception": {
+  "args": [
+   40,
+   49,
+   50,
+   54,
+   53,
+   44,
+   32,
+   34,
+   68,
+   97,
+   116,
+   97,
+   32,
+   116,
+   114,
+   117,
+   110,
+   99,
+   97,
+   116,
+   101,
+   100,
+   32,
+   102,
+   111,
+   114,
+   32,
+   99,
+   111,
+   108,
+   117,
+   109,
+   110,
+   32,
+   39,
+   97,
+   109,
+   111,
+   117,
+   110,
+   116,
+   39,
+   32,
+   97,
+   116,
+   32,
+   114,
+   111,
+   119,
+   32,
+   49,
+   34,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   68,
+   97,
+   116,
+   97,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://0.0.0.0:8000/api/method/frappe.desk.form.save.savedocs' [POST]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/sameer/Documents/sameer/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/sameer/Documents/sameer/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "66": "",
+    "67": "\t\telif request.path.startswith(\"/api/\"):",
+    "68": "\t\t\tresponse = frappe.api.handle()",
+    "69": "",
+    "70": "\t\telif request.path.startswith('/backups'):"
+   },
+   "lnum": 68
+  },
+  {
+   "call": "()",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/sameer/Documents/sameer/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/sameer/Documents/sameer/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "53": "\tif call==\"method\":",
+    "54": "\t\tfrappe.local.form_dict.cmd = doctype",
+    "55": "\t\treturn frappe.handler.handle()",
+    "56": "",
+    "57": "\telif call==\"resource\":"
+   },
+   "lnum": 55
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'frappe.desk.form.save.savedocs'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "29": "",
+    "30": "\tif cmd!='login':",
+    "31": "\t\tdata = execute_cmd(cmd)",
+    "32": "",
+    "33": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 31
+  },
+  {
+   "call": "(cmd='frappe.desk.form.save.savedocs', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'doc': '{\"name\":\"Receipt\",\"creation\":\"2021-09-1... 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}",
+    "global frappe": "<module 'frappe' from '/home/sameer/Documents/sameer/apps/frappe/frappe/__init__.py'>",
+    "method": "<function savedocs>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "65": "\t\tis_valid_http_method(method)",
+    "66": "",
+    "67": "\treturn frappe.call(method, **frappe.form_dict)",
+    "68": "",
+    "69": "def is_valid_http_method(method):"
+   },
+   "lnum": 67
+  },
+  {
+   "call": "(fn=<function savedocs>, *args=(), **kwargs={'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs', 'doc': '{\"name\":\"Receipt\",\"creation\":\"2021-09-17 11:10:1...DocPerm\"}],\"actions\":[],\"links\":[],\"__unsaved\":1}'})",
+   "dump": {
+    "args": "()",
+    "fn": "<function savedocs>",
+    "newargs": "{'action': 'Save', 'doc': '{\"name\":\"Receipt\",\"creation\":\"2021-09-17 11:10:1...DocPerm\"}],\"actions\":[],\"links\":[],\"__unsaved\":1}'}"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1196": "\tnewargs = get_newargs(fn, kwargs)",
+    "1197": "",
+    "1198": "\treturn fn(*args, **newargs)",
+    "1199": "",
+    "1200": "def get_newargs(fn, kwargs):"
+   },
+   "lnum": 1198
+  },
+  {
+   "call": "(doc=<DocType: Receipt>, action='Save')",
+   "dump": {
+    "doc": "<DocType: Receipt>",
+    "doc. save": "<bound method Document.save of <DocType: Receipt>>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/desk/form/save.py",
+   "func": "savedocs",
+   "lines": {
+    "19": "\t\t\tdoc.submit()",
+    "20": "\t\telse:",
+    "21": "\t\t\tdoc.save()",
+    "22": "",
+    "23": "\t\t# update recent documents"
+   },
+   "lnum": 21
+  },
+  {
+   "call": "(self=<DocType: Receipt>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "kwargs": "{}",
+    "self": "<DocType: Receipt>",
+    "self. _save": "<bound method Document._save of <DocType: Receipt>>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py",
+   "func": "save",
+   "lines": {
+    "283": "\tdef save(self, *args, **kwargs):",
+    "284": "\t\t\"\"\"Wrapper for _save\"\"\"",
+    "285": "\t\treturn self._save(*args, **kwargs)",
+    "286": "",
+    "287": "\tdef _save(self, ignore_permissions=None, ignore_version=None):"
+   },
+   "lnum": 285
+  },
+  {
+   "call": "(self=<DocType: Receipt>, ignore_permissions=None, ignore_version=None)",
+   "dump": {
+    "self": "<DocType: Receipt>",
+    "self. run_post_save_methods": "<bound method Document.run_post_save_methods of <DocType: Receipt>>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py",
+   "func": "_save",
+   "lines": {
+    "335": "",
+    "336": "\t\tself.update_children()",
+    "337": "\t\tself.run_post_save_methods()",
+    "338": "",
+    "339": "\t\t# clear unsaved flag"
+   },
+   "lnum": 337
+  },
+  {
+   "call": "(self=<DocType: Receipt>)",
+   "dump": {
+    "self": "<DocType: Receipt>",
+    "self. run_method": "<bound method Document.run_method of <DocType: Receipt>>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py",
+   "func": "run_post_save_methods",
+   "lines": {
+    "999": "",
+    "1000": "\t\tif self._action==\"save\":",
+    "1001": "\t\t\tself.run_method(\"on_update\")",
+    "1002": "\t\telif self._action==\"submit\":",
+    "1003": "\t\t\tself.run_method(\"on_update\")"
+   },
+   "lnum": 1001
+  },
+  {
+   "call": "(self=<DocType: Receipt>, method='on_update', *args=(), **kwargs={})",
+   "dump": {
+    "Document. hook": "<function Document.hook>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "global Document": "<class 'frappe.model.document.Document'>",
+    "kwargs": "{}",
+    "out": "undefined",
+    "self": "<DocType: Receipt>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py",
+   "func": "run_method",
+   "lines": {
+    "858": "",
+    "859": "\t\tfn.__name__ = str(method)",
+    "860": "\t\tout = Document.hook(fn)(self, *args, **kwargs)",
+    "861": "",
+    "862": "\t\tself.run_notifications(method)"
+   },
+   "lnum": 860
+  },
+  {
+   "call": "(self=<DocType: Receipt>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "composed": "<function Document.hook.<locals>.compose.<locals>.runner>",
+    "kwargs": "{}",
+    "method": "'on_update'",
+    "self": "<DocType: Receipt>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py",
+   "func": "composer",
+   "lines": {
+    "1156": "",
+    "1157": "\t\t\tcomposed = compose(f, *hooks)",
+    "1158": "\t\t\treturn composed(self, method, *args, **kwargs)",
+    "1159": "",
+    "1160": "\t\treturn composer"
+   },
+   "lnum": 1158
+  },
+  {
+   "call": "(self=<DocType: Receipt>, method='on_update', *args=(), **kwargs={})",
+   "dump": {
+    "add_to_return_value": "<function Document.hook.<locals>.add_to_return_value>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "kwargs": "{}",
+    "self": "<DocType: Receipt>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py",
+   "func": "runner",
+   "lines": {
+    "1139": "\t\tdef compose(fn, *hooks):",
+    "1140": "\t\t\tdef runner(self, method, *args, **kwargs):",
+    "1141": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))",
+    "1142": "\t\t\t\tfor f in hooks:",
+    "1143": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   },
+   "lnum": 1141
+  },
+  {
+   "call": "(self=<DocType: Receipt>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "builtin getattr": "<built-in function getattr>",
+    "fn": "undefined",
+    "kwargs": "{}",
+    "method": "'on_update'",
+    "self": "<DocType: Receipt>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py",
+   "func": "<lambda>",
+   "lines": {
+    "852": "",
+    "853": "\t\tif hasattr(self, method) and hasattr(getattr(self, method), \"__call__\"):",
+    "854": "\t\t\tfn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)",
+    "855": "\t\telse:",
+    "856": "\t\t\t# hack! to run hooks even if method does not exist"
+   },
+   "lnum": 854
+  },
+  {
+   "call": "(self=<DocType: Receipt>)",
+   "dump": {
+    "e": "undefined"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/core/doctype/doctype/doctype.py",
+   "func": "on_update",
+   "lines": {
+    "300": "\t\texcept Exception as e:",
+    "301": "\t\t\tprint(\"\\n\\nThere was an issue while migrating the DocType: {}\\n\".format(self.name))",
+    "302": "\t\t\traise e",
+    "303": "",
+    "304": "\t\tself.change_modified_of_parent()"
+   },
+   "lnum": 302
+  },
+  {
+   "call": "(self=<DocType: Receipt>)",
+   "dump": {
+    "frappe. db": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "frappe.db. updatedb": "<bound method MariaDBDatabase.updatedb of <frappe.database.mariadb.database.MariaDBDatabase object>>",
+    "global Meta": "<class 'frappe.model.meta.Meta'>",
+    "global frappe": "<module 'frappe' from '/home/sameer/Documents/sameer/apps/frappe/frappe/__init__.py'>",
+    "self": "<DocType: Receipt>",
+    "self. name": "'Receipt'"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/core/doctype/doctype/doctype.py",
+   "func": "on_update",
+   "lines": {
+    "297": "\t\t\"\"\"Update database schema, make controller templates if `custom` is not set and clear cache.\"\"\"",
+    "298": "\t\ttry:",
+    "299": "\t\t\tfrappe.db.updatedb(self.name, Meta(self))",
+    "300": "\t\texcept Exception as e:",
+    "301": "\t\t\tprint(\"\\n\\nThere was an issue while migrating the DocType: {}\\n\".format(self.name))"
+   },
+   "lnum": 299
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.database.MariaDBDatabase object>, doctype='Receipt', meta=<Meta: Receipt>)",
+   "dump": {
+    "db_table": "<frappe.database.mariadb.schema.MariaDBTable object>",
+    "db_table. sync": "<bound method DBTable.sync of <frappe.database.mariadb.schema.MariaDBTable object>>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/database/mariadb/database.py",
+   "func": "updatedb",
+   "lines": {
+    "295": "",
+    "296": "\t\t\tself.commit()",
+    "297": "\t\t\tdb_table.sync()",
+    "298": "\t\t\tself.begin()",
+    "299": ""
+   },
+   "lnum": 297
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.schema.MariaDBTable object>)",
+   "dump": {
+    "self": "<frappe.database.mariadb.schema.MariaDBTable object>",
+    "self. alter": "<bound method MariaDBTable.alter of <frappe.database.mariadb.schema.MariaDBTable object>>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/database/schema.py",
+   "func": "sync",
+   "lines": {
+    "38": "\t\telse:",
+    "39": "\t\t\tfrappe.cache().hdel('table_columns', self.table_name)",
+    "40": "\t\t\tself.alter()",
+    "41": "",
+    "42": "\tdef create(self):"
+   },
+   "lnum": 40
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.schema.MariaDBTable object>)",
+   "dump": {
+    "e": "undefined"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/database/mariadb/schema.py",
+   "func": "alter",
+   "lines": {
+    "84": "\t\t\t\t\tfieldname, self.table_name))",
+    "85": "\t\t\telif e.args[0]==1067:",
+    "86": "\t\t\t\tfrappe.throw(str(e.args[1]))",
+    "87": "\t\t\telse:",
+    "88": "\t\t\t\traise e"
+   },
+   "lnum": 88
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.schema.MariaDBTable object>)",
+   "dump": {
+    "frappe. db": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "frappe.db. sql": "<bound method Database.sql of <frappe.database.mariadb.database.MariaDBDatabase object>>",
+    "global frappe": "<module 'frappe' from '/home/sameer/Documents/sameer/apps/frappe/frappe/__init__.py'>",
+    "query": "'ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0'"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/database/mariadb/schema.py",
+   "func": "alter",
+   "lines": {
+    "73": "\t\t\t\t\tquery_body = \", \".join(query_parts)",
+    "74": "\t\t\t\t\tquery = \"ALTER TABLE `{}` {}\".format(self.table_name, query_body)",
+    "75": "\t\t\t\t\tfrappe.db.sql(query)",
+    "76": "",
+    "77": "\t\texcept Exception as e:"
+   },
+   "lnum": 75
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.database.MariaDBDatabase object>, query='ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0', values=(), as_dict=0, as_list=0, formatted=0, debug=0, ignore_ddl=0, as_utf8=0, auto_commit=0, update=None, explain=False)",
+   "dump": {
+    "query": "'ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0'",
+    "self": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "self. _cursor": "<pymysql.cursors.Cursor object>",
+    "self._cursor. execute": "<bound method Cursor.execute of <pymysql.cursors.Cursor object>>"
+   },
+   "file": "/home/sameer/Documents/sameer/apps/frappe/frappe/database/database.py",
+   "func": "sql",
+   "lines": {
+    "151": "",
+    "152": "\t\t\telse:",
+    "153": "\t\t\t\tself._cursor.execute(query)",
+    "154": "",
+    "155": "\t\t\t\tif frappe.flags.in_migrate:"
+   },
+   "lnum": 153
+  },
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, query='ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0', args=None)",
+   "dump": {
+    "query": "'ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0'",
+    "result": "undefined",
+    "self": "<pymysql.cursors.Cursor object>",
+    "self. _query": "<bound method Cursor._query of <pymysql.cursors.Cursor object>>"
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/cursors.py",
+   "func": "execute",
+   "lines": {
+    "146": "        query = self.mogrify(query, args)",
+    "147": "",
+    "148": "        result = self._query(query)",
+    "149": "        self._executed = query",
+    "150": "        return result"
+   },
+   "lnum": 148
+  },
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, q='ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0')",
+   "dump": {
+    "conn": "<pymysql.connections.Connection object>",
+    "conn. query": "<bound method Connection.query of <pymysql.connections.Connection object>>",
+    "q": "'ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0'"
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/cursors.py",
+   "func": "_query",
+   "lines": {
+    "308": "        self._last_executed = q",
+    "309": "        self._clear_result()",
+    "310": "        conn.query(q)",
+    "311": "        self._do_get_result()",
+    "312": "        return self.rowcount"
+   },
+   "lnum": 310
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, sql=b'ALTER TABLE `tabReceipt` MODIFY `amount` decimal(18,6) not null default 0', unbuffered=False)",
+   "dump": {
+    "self": "<pymysql.connections.Connection object>",
+    "self. _affected_rows": "0",
+    "self. _read_query_result": "<bound method Connection._read_query_result of <pymysql.connections.Connection object>>",
+    "unbuffered": "False"
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py",
+   "func": "query",
+   "lines": {
+    "546": "            sql = sql.encode(self.encoding, \"surrogateescape\")",
+    "547": "        self._execute_command(COMMAND.COM_QUERY, sql)",
+    "548": "        self._affected_rows = self._read_query_result(unbuffered=unbuffered)",
+    "549": "        return self._affected_rows",
+    "550": ""
+   },
+   "lnum": 548
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, unbuffered=False)",
+   "dump": {
+    "result": "<pymysql.connections.MySQLResult object>",
+    "result. read": "<bound method MySQLResult.read of <pymysql.connections.MySQLResult object>>"
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py",
+   "func": "_read_query_result",
+   "lines": {
+    "773": "        else:",
+    "774": "            result = MySQLResult(self)",
+    "775": "            result.read()",
+    "776": "        self._result = result",
+    "777": "        if result.server_status is not None:"
+   },
+   "lnum": 775
+  },
+  {
+   "call": "(self=<pymysql.connections.MySQLResult object>)",
+   "dump": {
+    "first_packet": "undefined",
+    "self": "<pymysql.connections.MySQLResult object>",
+    "self. connection": "None",
+    "self.connection._read_packet": "undefined"
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py",
+   "func": "read",
+   "lines": {
+    "1154": "    def read(self):",
+    "1155": "        try:",
+    "1156": "            first_packet = self.connection._read_packet()",
+    "1157": "",
+    "1158": "            if first_packet.is_ok_packet():"
+   },
+   "lnum": 1156
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, packet_type=<class 'pymysql.protocol.MysqlPacket'>)",
+   "dump": {
+    "packet": "<pymysql.protocol.MysqlPacket object>",
+    "packet. raise_for_error": "<bound method MysqlPacket.raise_for_error of <pymysql.protocol.MysqlPacket object>>"
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py",
+   "func": "_read_packet",
+   "lines": {
+    "723": "            if self._result is not None and self._result.unbuffered_active is True:",
+    "724": "                self._result.unbuffered_active = False",
+    "725": "            packet.raise_for_error()",
+    "726": "        return packet",
+    "727": ""
+   },
+   "lnum": 725
+  },
+  {
+   "call": "(self=<pymysql.protocol.MysqlPacket object>)",
+   "dump": {
+    "err. raise_mysql_exception": "<function raise_mysql_exception>",
+    "global err": "<module 'pymysql.err' from '/home/sameer/Documen.../env/lib/python3.8/site-packages/pymysql/err.py'>",
+    "self": "<pymysql.protocol.MysqlPacket object>",
+    "self. _data": "b\"\\xff\\xf1\\x04#01000Data truncated for column 'amount' at row 1\""
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/protocol.py",
+   "func": "raise_for_error",
+   "lines": {
+    "219": "        if DEBUG:",
+    "220": "            print(\"errno =\", errno)",
+    "221": "        err.raise_mysql_exception(self._data)",
+    "222": "",
+    "223": "    def dump(self):"
+   },
+   "lnum": 221
+  },
+  {
+   "call": "(data=b\"\\xff\\xf1\\x04#01000Data truncated for column 'amount' at row 1\")",
+   "dump": {
+    "errno": "1265",
+    "errorclass": "<class 'pymysql.err.DataError'>",
+    "errval": "\"Data truncated for column 'amount' at row 1\""
+   },
+   "file": "/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/err.py",
+   "func": "raise_mysql_exception",
+   "lines": {
+    "139": "    errval = data[9:].decode(\"utf-8\", \"replace\")",
+    "140": "    errorclass = error_map.get(errno)",
+    "141": "    if errorclass is None:",
+    "142": "        errorclass = InternalError if errno < 1000 else OperationalError",
+    "143": "    raise errorclass(errno, errval)"
+   },
+   "lnum": 143
+  }
+ ],
+ "locals": {
+  "data": "b\"\\xff\\xf1\\x04#01000Data truncated for column 'amount' at row 1\"",
+  "errno": "1265",
+  "errorclass": "<class 'pymysql.err.DataError'>",
+  "errval": "Data truncated for column 'amount' at row 1"
+ },
+ "pyver": "Python 3.8.10: /home/sameer/Documents/sameer/env/bin/python (prefix: /home/sameer/Documents/sameer/env)",
+ "timestamp": "2021-09-17 13:10:32.913690",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/app.py\", line 68, in application\n    response = frappe.api.handle()\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/api.py\", line 55, in handle\n    return frappe.handler.handle()\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/handler.py\", line 31, in handle\n    data = execute_cmd(cmd)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/handler.py\", line 67, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/__init__.py\", line 1198, in call\n    return fn(*args, **newargs)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/desk/form/save.py\", line 21, in savedocs\n    doc.save()\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py\", line 285, in save\n    return self._save(*args, **kwargs)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py\", line 337, in _save\n    self.run_post_save_methods()\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py\", line 1001, in run_post_save_methods\n    self.run_method(\"on_update\")\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py\", line 860, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py\", line 1158, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py\", line 1141, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/model/document.py\", line 854, in <lambda>\n    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/core/doctype/doctype/doctype.py\", line 302, in on_update\n    raise e\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/core/doctype/doctype/doctype.py\", line 299, in on_update\n    frappe.db.updatedb(self.name, Meta(self))\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/database/mariadb/database.py\", line 297, in updatedb\n    db_table.sync()\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/database/schema.py\", line 40, in sync\n    self.alter()\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/database/mariadb/schema.py\", line 88, in alter\n    raise e\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/database/mariadb/schema.py\", line 75, in alter\n    frappe.db.sql(query)\n  File \"/home/sameer/Documents/sameer/apps/frappe/frappe/database/database.py\", line 153, in sql\n    self._cursor.execute(query)\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/cursors.py\", line 148, in execute\n    result = self._query(query)\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/cursors.py\", line 310, in _query\n    conn.query(q)\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py\", line 548, in query\n    self._affected_rows = self._read_query_result(unbuffered=unbuffered)\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py\", line 775, in _read_query_result\n    result.read()\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py\", line 1156, in read\n    first_packet = self.connection._read_packet()\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/connections.py\", line 725, in _read_packet\n    packet.raise_for_error()\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/protocol.py\", line 221, in raise_for_error\n    err.raise_mysql_exception(self._data)\n  File \"/home/sameer/Documents/sameer/env/lib/python3.8/site-packages/pymysql/err.py\", line 143, in raise_mysql_exception\n    raise errorclass(errno, errval)\npymysql.err.DataError: (1265, \"Data truncated for column 'amount' at row 1\")\n"
+}

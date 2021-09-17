@@ -1,0 +1,103 @@
+2021-09-16 20:14:08,210 DEBUG cd sameer && /usr/bin/virtualenv -q env -p python3
+2021-09-16 20:14:09,024 LOG Getting app frappe
+2021-09-16 20:14:09,025 DEBUG cd sameer/apps && git clone https://github.com/frappe/frappe.git --branch version-13 --depth 1 --origin upstream
+2021-09-16 20:14:16,871 LOG installing frappe
+2021-09-16 20:14:16,872 DEBUG sameer/env/bin/python -m pip install -q -U -e sameer/apps/frappe 
+2021-09-16 20:15:24,028 DEBUG cd sameer/apps/frappe && yarn install
+2021-09-16 20:16:28,434 DEBUG cd sameer/apps/frappe && yarn install
+2021-09-16 20:16:49,744 DEBUG cd sameer && bench build
+2021-09-16 20:16:50,144 INFO /usr/local/bin/bench build
+2021-09-16 20:16:58,005 LOG setting up backups
+2021-09-16 20:16:58,032 INFO Bench sameer initialized
+2021-09-16 20:17:58,751 INFO /usr/local/bin/bench new-site Banking
+2021-09-16 20:20:52,059 INFO /usr/local/bin/bench get-app --branch=version-13 erpnext
+2021-09-16 20:20:53,164 LOG Getting app erpnext
+2021-09-16 20:20:53,164 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext --branch version-13 --depth 1 --origin upstream
+2021-09-16 20:21:20,713 LOG installing erpnext
+2021-09-16 20:21:20,713 DEBUG ./env/bin/python -m pip install -q -U -e ./apps/erpnext 
+2021-09-16 20:21:53,739 DEBUG cd ./apps/erpnext && yarn install
+2021-09-16 20:22:11,991 DEBUG bench build --app erpnext
+2021-09-16 20:22:12,274 INFO /usr/local/bin/bench build --app erpnext
+2021-09-16 20:24:31,926 INFO /usr/local/bin/bench new-app transection
+2021-09-16 20:24:32,225 LOG creating new app transection
+2021-09-16 20:25:52,389 LOG installing transection
+2021-09-16 20:25:52,391 DEBUG ./env/bin/python -m pip install -q -U -e ./apps/transection 
+2021-09-16 20:25:56,175 DEBUG bench build --app transection
+2021-09-16 20:25:56,441 INFO /usr/local/bin/bench build --app transection
+2021-09-16 20:26:37,237 INFO /usr/local/bin/bench --site Banking install-app transection
+2021-09-16 20:26:49,474 INFO /usr/local/bin/bench --site Banking install-app erpnext
+2021-09-16 20:29:47,651 INFO /usr/local/bin/bench --site Banking set-config developer_mode 1
+2021-09-16 20:29:57,543 INFO /usr/local/bin/bench use Banking
+2021-09-16 20:30:04,114 INFO /usr/local/bin/bench start
+2021-09-16 20:30:05,383 INFO /usr/local/bin/bench serve --port 8000
+2021-09-16 20:30:05,448 INFO /usr/local/bin/bench worker --queue default
+2021-09-16 20:30:05,499 INFO /usr/local/bin/bench schedule
+2021-09-16 20:30:05,522 INFO /usr/local/bin/bench watch
+2021-09-16 20:30:05,635 INFO /usr/local/bin/bench worker --queue short
+2021-09-16 20:30:05,644 INFO /usr/local/bin/bench worker --queue long
+2021-09-16 20:30:31,815 INFO /usr/local/bin/bench --site Banking set-config developer_mode 1
+2021-09-16 20:30:36,394 INFO /usr/local/bin/bench --site Banking install-app erpnext
+2021-09-16 20:30:52,247 INFO /usr/local/bin/bench start
+2021-09-16 20:30:53,483 INFO /usr/local/bin/bench schedule
+2021-09-16 20:30:53,520 INFO /usr/local/bin/bench serve --port 8000
+2021-09-16 20:30:53,611 INFO /usr/local/bin/bench watch
+2021-09-16 20:30:53,634 INFO /usr/local/bin/bench worker --queue short
+2021-09-16 20:30:53,641 INFO /usr/local/bin/bench worker --queue long
+2021-09-16 20:30:53,724 INFO /usr/local/bin/bench worker --queue default
+2021-09-16 20:35:30,652 INFO /home/sameer/.local/bin/bench start
+2021-09-16 20:35:32,368 INFO /home/sameer/.local/bin/bench worker --queue long
+2021-09-16 20:35:32,401 INFO /home/sameer/.local/bin/bench watch
+2021-09-16 20:35:32,411 INFO /home/sameer/.local/bin/bench worker --queue short
+2021-09-16 20:35:32,423 INFO /home/sameer/.local/bin/bench schedule
+2021-09-16 20:35:32,458 INFO /home/sameer/.local/bin/bench worker --queue default
+2021-09-16 20:35:32,524 INFO /home/sameer/.local/bin/bench serve --port 8000
+2021-09-16 20:40:23,573 INFO /home/sameer/.local/bin/bench starts
+2021-09-16 20:40:23,963 WARNING /home/sameer/.local/bin/bench starts executed with exit code 2
+2021-09-16 20:40:41,053 INFO /home/sameer/.local/bin/bench start
+2021-09-16 20:40:42,392 INFO /home/sameer/.local/bin/bench schedule
+2021-09-16 20:40:42,574 INFO /home/sameer/.local/bin/bench watch
+2021-09-16 20:40:42,591 INFO /home/sameer/.local/bin/bench worker --queue short
+2021-09-16 20:40:42,666 INFO /home/sameer/.local/bin/bench worker --queue long
+2021-09-16 20:40:42,676 INFO /home/sameer/.local/bin/bench serve --port 8000
+2021-09-16 20:40:42,776 INFO /home/sameer/.local/bin/bench worker --queue default
+2021-09-16 23:54:45,165 INFO /home/sameer/.local/bin/bench starts
+2021-09-16 23:54:45,532 WARNING /home/sameer/.local/bin/bench starts executed with exit code 2
+2021-09-16 23:54:52,282 INFO /home/sameer/.local/bin/bench start
+2021-09-16 23:54:53,487 INFO /home/sameer/.local/bin/bench worker --queue short
+2021-09-16 23:54:53,630 INFO /home/sameer/.local/bin/bench watch
+2021-09-16 23:54:53,798 INFO /home/sameer/.local/bin/bench serve --port 8000
+2021-09-16 23:54:53,822 INFO /home/sameer/.local/bin/bench schedule
+2021-09-16 23:54:53,835 INFO /home/sameer/.local/bin/bench worker --queue default
+2021-09-16 23:54:53,837 INFO /home/sameer/.local/bin/bench worker --queue long
+2021-09-17 00:00:01,913 INFO /usr/local/bin/bench --verbose --site all backup
+2021-09-17 00:00:54,968 INFO /home/sameer/.local/bin/bench start
+2021-09-17 00:00:56,453 INFO /home/sameer/.local/bin/bench schedule
+2021-09-17 00:00:56,467 INFO /home/sameer/.local/bin/bench serve --port 8000
+2021-09-17 00:00:56,468 INFO /home/sameer/.local/bin/bench worker --queue long
+2021-09-17 00:00:56,500 INFO /home/sameer/.local/bin/bench worker --queue short
+2021-09-17 00:00:56,531 INFO /home/sameer/.local/bin/bench watch
+2021-09-17 00:00:56,543 INFO /home/sameer/.local/bin/bench worker --queue default
+2021-09-17 10:50:26,729 INFO /home/sameer/.local/bin/bench starts
+2021-09-17 10:50:27,146 WARNING /home/sameer/.local/bin/bench starts executed with exit code 2
+2021-09-17 10:50:30,778 INFO /home/sameer/.local/bin/bench start
+2021-09-17 10:50:32,032 INFO /home/sameer/.local/bin/bench worker --queue short
+2021-09-17 10:50:32,037 INFO /home/sameer/.local/bin/bench worker --queue long
+2021-09-17 10:50:32,070 INFO /home/sameer/.local/bin/bench schedule
+2021-09-17 10:50:32,204 INFO /home/sameer/.local/bin/bench watch
+2021-09-17 10:50:32,226 INFO /home/sameer/.local/bin/bench worker --queue default
+2021-09-17 10:50:32,274 INFO /home/sameer/.local/bin/bench serve --port 8000
+2021-09-17 10:59:20,900 INFO /home/sameer/.local/bin/bench start
+2021-09-17 10:59:22,418 INFO /home/sameer/.local/bin/bench schedule
+2021-09-17 10:59:22,472 INFO /home/sameer/.local/bin/bench worker --queue long
+2021-09-17 10:59:22,492 INFO /home/sameer/.local/bin/bench serve --port 8000
+2021-09-17 10:59:22,502 INFO /home/sameer/.local/bin/bench worker --queue short
+2021-09-17 10:59:22,507 INFO /home/sameer/.local/bin/bench watch
+2021-09-17 10:59:22,594 INFO /home/sameer/.local/bin/bench worker --queue default
+2021-09-17 12:00:01,824 INFO /usr/local/bin/bench --verbose --site all backup
+2021-09-17 12:02:02,930 INFO /home/sameer/.local/bin/bench start
+2021-09-17 12:02:04,297 INFO /home/sameer/.local/bin/bench watch
+2021-09-17 12:02:04,430 INFO /home/sameer/.local/bin/bench serve --port 8000
+2021-09-17 12:02:04,450 INFO /home/sameer/.local/bin/bench schedule
+2021-09-17 12:02:04,472 INFO /home/sameer/.local/bin/bench worker --queue long
+2021-09-17 12:02:04,513 INFO /home/sameer/.local/bin/bench worker --queue default
+2021-09-17 12:02:04,519 INFO /home/sameer/.local/bin/bench worker --queue short
